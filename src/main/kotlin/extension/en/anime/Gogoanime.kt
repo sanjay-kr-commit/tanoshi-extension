@@ -106,7 +106,7 @@ class Gogoanime : AnimeExtension {
         for ( item in table ) {
             Anime( this ).apply {
                 title = item.getElementsByTag("a").attr("title")
-                url = "$baseUrl/${item.getElementsByTag( "a" ).attr( "href" )}"
+                url = "$baseUrl${item.getElementsByTag( "a" ).attr( "href" )}"
                 thumbnail_url = item.getElementsByClass( "thumbnail-popular" ).attr( "style" ).run {
                     substring( indexOf( "http" ) , lastIndexOf( ");" )-1 )
                 }
@@ -134,7 +134,7 @@ class Gogoanime : AnimeExtension {
         table.forEach { anime ->
             Anime( this ).apply {
                 title = anime.select( "a" ).attr( "title" )
-                url = baseUrl + anime.select( "a" ).attr( "href" ).substring( 1 )
+                url = baseUrl +"/"+ anime.select( "a" ).attr( "href" ).substring( 1 )
                 thumbnail_url = anime.select( "img" ).attr( "src" )
                 animeList.add( this@apply )
             }
@@ -154,7 +154,7 @@ class Gogoanime : AnimeExtension {
         for ( element in table ) {
             Anime(this ).apply {
                 title = element.getElementsByTag( "a" ).attr( "title" )
-                url = "$baseUrl/${element.getElementsByTag( "a" ).attr( "href" )}"
+                url = "$baseUrl${element.getElementsByTag( "a" ).attr( "href" )}"
                 thumbnail_url = element.getElementsByTag("img").attr("src")
             }.let { entry -> animeList.add( entry ) }
         }
