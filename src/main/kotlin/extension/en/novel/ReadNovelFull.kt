@@ -41,7 +41,6 @@ class ReadNovelFull : NovelExtension {
             .attr( "data-novel-id" )
         val table = "${baseUrl}/ajax/chapter-archive?novelId=$novelId"
             .toHtml().toJsoup().getElementsByTag( "li" )
-        println( table )
         table.forEach { chapter ->
             try {
                 NovelChapter().apply {
