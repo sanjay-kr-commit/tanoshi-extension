@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.sanjay-kr-commit:tanoshi-source-api:0.1")
+    implementation("com.github.sanjay-kr-commit:tanoshi-source-api:0.2")
     implementation("com.squareup.okhttp:okhttp:2.7.5")
     implementation("org.jsoup:jsoup:1.15.3")
     testImplementation(kotlin("test"))
